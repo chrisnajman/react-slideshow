@@ -1,0 +1,125 @@
+.fade-in {
+    animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+.slideshow-container {
+    width:80%;
+    display:grid;
+    margin:0 auto;
+    grid-gap:1rem;
+    grid-template-areas:    'maintitle maintitle maintitle maintitle maintitle'
+                            'image image image image image'
+                            'slidetitle slidetitle slidetitle slidetitle slidetitle';
+}
+.slideshow-container img { display: block;}
+
+
+.slideshow-title {
+    text-align:center;
+    grid-area: maintitle
+}
+
+.image {
+    grid-area: image;
+    z-index:10;
+}
+
+.background {
+    grid-area:image;
+}
+
+.slide-previous {
+    justify-self: start;
+    margin: 0 0 0 -4rem;
+}
+
+.slide-next {
+    justify-self: end;
+    margin: 0 -4rem 0 0;
+}
+
+.slide-button {
+    display:block;
+    grid-area: image;
+    z-index:20;
+    align-self:center;
+    font-size: 2rem;
+    cursor:pointer;
+    border:0;
+    border-radius:50%;
+    padding: 0.5rem 1rem;
+    opacity:0.5;
+    background:silver;
+    color:green;
+    font-weight:600;
+    outline:0;
+}
+
+.slide-button:hover,
+.slide-button:active {
+    opacity:0.8;
+    background:green;
+    color:white;
+}
+
+.button-disabled {
+    visibility: hidden;
+}
+
+.title {
+    text-align:center;
+    max-width:100%;
+    grid-area: slidetitle;
+}
+
+.image-counter {
+    max-width:100%;
+    grid-area:slidetitle;
+    z-index:10;
+    text-align:right;
+}
+
+.back {
+    text-align:center;
+    max-width:100%;
+    grid-area: slidetitle;
+    z-index:20;
+    text-align:left;
+    cursor:pointer;
+    color:green;
+}
+
+.back:hover,
+.back:active {
+    color:black;
+}
+.back-arrow::before {
+    content: "\2190 ";
+}
+
+/* Progress dots */
+.slide-dots {
+    list-style:none;
+    width:80%;
+    margin:0 auto;
+    padding:3rem 0 0 0;
+
+display: grid;
+justify-content:center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(1rem, 1rem));
+}
+
+.slide-dots li{
+    border-radius:50%;
+    width:1em;
+    height:1em;
+    margin:0;
+    padding:0;
+}
